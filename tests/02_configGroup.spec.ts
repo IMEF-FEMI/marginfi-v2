@@ -50,8 +50,7 @@ describe("Config group", () => {
             PublicKey.default,
             PublicKey.default,
             PublicKey.default,
-            PublicKey.default,
-            false
+            PublicKey.default
           )
           .accountsPartial({
             marginfiGroup: marginfiGroup.publicKey,

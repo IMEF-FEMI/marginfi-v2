@@ -5,13 +5,13 @@ Are you an accountant or the person responsible for collecting bank fees? Read o
 ## Glossary
 
 - **Insurance fee** - Used to offset socialized losses in the event of bankruptcy. 
-- **Group fee** - Goes to the group owner. For the main pool, this is marginfi. For permissionless arena pools, this is whoever created the pool.
+- **Group fee** - Goes to the group owner. For the main pool, this is marginfi.
 - **Program fee** - Goes to the program owner (i.e. margin foundation).
 - **Base rate** - The rate determined by the curve parameters and current utilization. A more detailed explanation is beyond the scope of this guide.
 - **Ir rate** - A rate that scales off the base rate, for example an ir rate of 10% means you will pay 10% of the base rate. 
 - **Fixed rate** - A rate of 10% here would mean users pay exactly 10%
-- **Origination Fee** - A % of the borrow amount charged when a borrow is initiated. Typically only applies to arena.
-- **Flat sol fee** - A fixed amount of SOL charged when creating a new bank. Typically only applies to arena.
+- **Origination Fee** - A % of the borrow amount charged when a borrow is initiated.
+- **Flat sol fee** - A fixed amount of SOL charged when creating a new bank.
 - **Global fee wallet** - One per program, a wallet that receives all program fees. Can be changed
   by the global fee admin.
 
@@ -29,7 +29,6 @@ borrowers (like Staked Collateral) never earn fees.
   is 1%, and the program_ir is 10%, then the group gets 0.9% and the program gets 0.1% of any
   borrow. A user borrowing \$100 would pay \$101, where 90 cents goes to the group and 10 cents to
   the program.
-- **Flat sol fee** - Automatically debited to the global program fee wallet any time a bank is created on Arena.
 
 ## How Interest Accumulates
 

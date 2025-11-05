@@ -30,7 +30,3 @@ Next, the group administrator runs `handle_bankruptcy` on the user. For banks wh
 ### What Happens if it Doesn't Run?
 
 If Bankruptcy isn't executed on a bankrupt user, then remaining depositors can never withdraw the whole balance in the bank. The last few depositors who try to withdraw will find there are not enough funds - proportional to the liabilities held by bankrupt users.
-
-### When Does This Matter?
-
-Bankruptcy is very rare in the main pool. Almost all bankruptcies occur in Arena, where riskier assets tend to have extremely volatile moves.

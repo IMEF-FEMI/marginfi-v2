@@ -139,7 +139,6 @@ export const addBankWithSeed = (
  * newEmissionsAdmin - (Optional) pass null to keep current emissions admin
  * newRiskAdmin - (Optional) pass null to keep current risk admin
  * marginfiGroup's admin - must sign
- * isArena - default false
  */
 export type GroupConfigureArgs = {
   newAdmin?: PublicKey | null; // optional; pass null or leave undefined to keep current admin
@@ -149,7 +148,6 @@ export type GroupConfigureArgs = {
   newEmissionsAdmin?: PublicKey | null;
   newRiskAdmin?: PublicKey | null;
   marginfiGroup: PublicKey;
-  isArena?: boolean; // optional; defaults to false if not provided
 };
 
 export const groupConfigure = async (
@@ -163,9 +161,7 @@ export const groupConfigure = async (
   const newLimitAdmin = args.newLimitAdmin ?? group.delegateLimitAdmin;
   const newEmissionsAdmin =
     args.newEmissionsAdmin ?? group.delegateEmissionsAdmin;
-  const newRiskAdmin =
-    args.newRiskAdmin ?? group.riskAdmin;
-  const isArena = args.isArena ?? false;
+  const newRiskAdmin = args.newRiskAdmin ?? group.riskAdmin;
 
   const ix = program.methods
     .marginfiGroupConfigure(
@@ -174,8 +170,7 @@ export const groupConfigure = async (
       newCurveAdmin,
       newLimitAdmin,
       newEmissionsAdmin,
-      newRiskAdmin,
-      isArena
+      newRiskAdmin
     )
     .accounts({
       marginfiGroup: args.marginfiGroup,
@@ -189,16 +184,14 @@ export const groupConfigure = async (
 export type GroupInitializeArgs = {
   marginfiGroup: PublicKey;
   admin: PublicKey;
-  isArena?: boolean; // optional; defaults to false if not provided
 };
 
 export const groupInitialize = (
   program: Program<Marginfi>,
   args: GroupInitializeArgs
 ) => {
-  const isArena = args.isArena ?? false;
   const ix = program.methods
-    .marginfiGroupInitialize(isArena)
+    .marginfiGroupInitialize()
     .accounts({
       marginfiGroup: args.marginfiGroup,
       // feeState: deriveGlobalFeeState(id),
@@ -400,8 +393,7 @@ export const propagateFeeState = (
   args: PropogateFeeStateArgs
 ) => {
   const ix = program.methods
-    .propagateFeeState(
-    )
+    .propagateFeeState()
     .accounts({
       marginfiGroup: args.group,
       // feeState = deriveGlobalFeeState(id),
@@ -410,7 +402,6 @@ export const propagateFeeState = (
 
   return ix;
 };
-
 
 export type InitStakedSettingsArgs = {
   group: PublicKey;

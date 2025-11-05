@@ -96,7 +96,6 @@ async fn marginfi_group_handle_bankruptcy_unauthorized() -> anyhow::Result<()> {
             Pubkey::new_unique(),
             Pubkey::new_unique(),
             Pubkey::new_unique(),
-            false,
         )
         .await?;
 
@@ -200,7 +199,6 @@ async fn marginfi_group_handle_bankruptcy_perimssionless() -> anyhow::Result<()>
             Pubkey::new_unique(),
             Pubkey::new_unique(),
             Pubkey::new_unique(),
-            false,
         )
         .await?;
 

@@ -5,8 +5,7 @@ A user got their wallet pwned and you need to move them to a new mrgn account? R
 Before you begin:
 
 - You must be an admin of the group where the user account is based. If this is a mrgn-owned group,
-  that's probably the multisig (AZtUUe9GvTFq9kfseu9jxTioSgdSfjgmZfGQBmhVpTj1). If this is arena,
-  that's the pool owner/creator.
+  that's probably the multisig (AZtUUe9GvTFq9kfseu9jxTioSgdSfjgmZfGQBmhVpTj1).
 - If you have admin, consider freezing the account with `SetAccountFlag` (passing `DISABLED_FLAG`)
   to prevent the attacker from doing anything.
 

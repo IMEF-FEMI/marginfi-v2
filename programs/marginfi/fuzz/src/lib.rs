@@ -1047,7 +1047,6 @@ fn initialize_marginfi_group<'a>(
             &[],
             Default::default(),
         ),
-        false,
     )
     .unwrap();
 
@@ -1073,7 +1072,6 @@ fn initialize_marginfi_group<'a>(
         admin.key(), // limit_admin
         admin.key(), // emissions_admin
         admin.key(), // risk_admin
-        false,       // is_arena_group
     )
     .unwrap();
 
